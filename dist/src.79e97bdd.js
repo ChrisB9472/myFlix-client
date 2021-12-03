@@ -32037,7 +32037,7 @@ var MainView = exports.MainView = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios2.default.get('https://[APP-NAME].herokuapp.com/movies').then(function (response) {
+      _axios2.default.get('https://safe-cliffs-7.herokuapp.com/movies').then(function (response) {
         _this2.setState({
           movies: response.data
         });
