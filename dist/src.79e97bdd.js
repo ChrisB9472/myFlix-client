@@ -29774,7 +29774,228 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":12}],29:[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":12}],33:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MovieCard = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MovieCard = exports.MovieCard = function (_React$Component) {
+  _inherits(MovieCard, _React$Component);
+
+  function MovieCard() {
+    _classCallCheck(this, MovieCard);
+
+    return _possibleConstructorReturn(this, (MovieCard.__proto__ || Object.getPrototypeOf(MovieCard)).apply(this, arguments));
+  }
+
+  _createClass(MovieCard, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          movie = _props.movie,
+          onMovieClick = _props.onMovieClick;
+
+
+      return _react2.default.createElement(
+        "div",
+        { className: "movie-card", onClick: function onClick() {
+            onMovieClick(movie);
+          } },
+        movie.Title
+      );
+    }
+  }]);
+
+  return MovieCard;
+}(_react2.default.Component);
+},{"react":8}],35:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MovieView = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MovieView = exports.MovieView = function (_React$Component) {
+  _inherits(MovieView, _React$Component);
+
+  function MovieView() {
+    _classCallCheck(this, MovieView);
+
+    return _possibleConstructorReturn(this, (MovieView.__proto__ || Object.getPrototypeOf(MovieView)).apply(this, arguments));
+  }
+
+  _createClass(MovieView, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          movie = _props.movie,
+          onBackClick = _props.onBackClick;
+
+
+      return _react2.default.createElement(
+        "div",
+        { className: "movie-view" },
+        _react2.default.createElement(
+          "div",
+          { className: "movie-poster" },
+          _react2.default.createElement("img", { src: movie.ImagePath })
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "movie-title" },
+          _react2.default.createElement(
+            "span",
+            { className: "label" },
+            "Title: "
+          ),
+          _react2.default.createElement(
+            "span",
+            { className: "value" },
+            movie.Title
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "movie-description" },
+          _react2.default.createElement(
+            "span",
+            { className: "label" },
+            "Description: "
+          ),
+          _react2.default.createElement(
+            "span",
+            { className: "value" },
+            movie.Description
+          )
+        ),
+        _react2.default.createElement(
+          "button",
+          { onClick: function onClick() {
+              onBackClick(null);
+            } },
+          "Back"
+        )
+      );
+    }
+  }]);
+
+  return MovieView;
+}(_react2.default.Component);
+},{"react":8}],31:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MainView = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _movieCard = require('../movie-card/movie-card');
+
+var _movieView = require('../movie-view/movie-view');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MainView = exports.MainView = function (_React$Component) {
+  _inherits(MainView, _React$Component);
+
+  function MainView() {
+    _classCallCheck(this, MainView);
+
+    var _this = _possibleConstructorReturn(this, (MainView.__proto__ || Object.getPrototypeOf(MainView)).call(this));
+
+    _this.state = {
+      movies: [{ _id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...' }, { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...' }, { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...' }],
+      selectedMovie: null
+    };
+    return _this;
+  }
+
+  _createClass(MainView, [{
+    key: 'setSelectedMovie',
+    value: function setSelectedMovie(newSelectedMovie) {
+      this.setState({
+        selectedMovie: newSelectedMovie
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _state = this.state,
+          movies = _state.movies,
+          selectedMovie = _state.selectedMovie;
+
+
+      if (movies.length === 0) return _react2.default.createElement(
+        'div',
+        { className: 'main-view' },
+        'The list is empty!'
+      );
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'main-view' },
+        selectedMovie ? _react2.default.createElement(_movieView.MovieView, { movie: selectedMovie, onBackClick: function onBackClick(newSelectedMovie) {
+            _this2.setSelectedMovie(newSelectedMovie);
+          } }) : movies.map(function (movie) {
+          return _react2.default.createElement(_movieCard.MovieCard, { key: movie._id, movie: movie, onMovieClick: function onMovieClick(movie) {
+              _this2.setSelectedMovie(movie);
+            } });
+        })
+      );
+    }
+  }]);
+
+  return MainView;
+}(_react2.default.Component);
+
+exports.default = MainView;
+},{"react":8,"../movie-card/movie-card":33,"../movie-view/movie-view":35}],29:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -29853,6 +30074,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _mainView = require('./components/main-view/main-view');
+
+var _mainView2 = _interopRequireDefault(_mainView);
+
 require('./index.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -29879,15 +30104,7 @@ var MyFlixApplication = function (_React$Component) {
   _createClass(MyFlixApplication, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'my-flix' },
-        _react2.default.createElement(
-          'div',
-          null,
-          'Good morning'
-        )
-      );
+      return _react2.default.createElement(_mainView2.default, null);
     }
   }]);
 
@@ -29901,7 +30118,7 @@ var container = document.getElementsByClassName('app-container')[0];
 
 // Tells React to render your app in the root DOM element
 _reactDom2.default.render(_react2.default.createElement(MyFlixApplication), container);
-},{"react":8,"react-dom":9,"./index.scss":6}],30:[function(require,module,exports) {
+},{"react":8,"react-dom":9,"./components/main-view/main-view":31,"./index.scss":6}],30:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
